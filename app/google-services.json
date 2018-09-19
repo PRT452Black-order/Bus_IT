@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "485153282433",
+    "firebase_url": "https://nt-bus-app.firebaseio.com",
+    "project_id": "nt-bus-app",
+    "storage_bucket": "nt-bus-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485153282433:android:ce54b47b25e1a512",
+        "android_client_info": {
+          "package_name": "com.example.cdu_nb.bus_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485153282433-frsgbunqrlhpliinq6vcjuot8gmobf1i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF_9s_-MqXiCV-uLox14zwvGsJnR1Q10I"
+        },
+        {
+          "current_key": "AIzaSyAF_9s_-MqXiCV-uLox14zwvGsJnR1Q10I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
