@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/registration"
     tools:context=".RegisterActivity">
 
     <TextView
@@ -80,7 +81,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/already_having_account"
-        android:textColor="#000" />
+        android:textColor="#fff" />
 
     <Button
         android:id="@+id/btnRegisterLogin"
