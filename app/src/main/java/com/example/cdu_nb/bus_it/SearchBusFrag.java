@@ -13,5 +13,7 @@ public class SearchBusFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container, @Nullable Bundle savedInstanceState) {
         View myview=inflater.inflate(R.layout.searchbus,container,false);
         return myview;
+
+
     }
 }
