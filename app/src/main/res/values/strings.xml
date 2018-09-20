@@ -42,4 +42,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- string related to tapandgo page-->
+    <string name="thanks">Thank you for riding our bus</string>
 </resources>
