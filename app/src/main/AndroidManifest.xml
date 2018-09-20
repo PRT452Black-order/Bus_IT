@@ -8,6 +8,12 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+    <!-- maps permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,22 +25,40 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+<<<<<<< HEAD
 
         </activity>
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+=======
+            <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyC12ueFJGRi-LDrLwW5cvzGSHb3cZKjMPE" />
+            <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+
+>>>>>>> 42179af16b857d0cdb08dbd4240044b9c5555c31
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".RegisterActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             />
+=======
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MapActivity"></activity>
+>>>>>>> 42179af16b857d0cdb08dbd4240044b9c5555c31
     </application>
 
 </manifest>
