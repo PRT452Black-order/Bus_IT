@@ -18,7 +18,7 @@ public class SearchBusFrag extends Fragment {
         OnClickListener listnr=new OnClickListener() {
             @Override
             public void onClick(View myview) {
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                Intent intent = new Intent(getActivity(), MapActivity.class);
                 startActivity(intent);
             }
         };
