@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setting search bus page as default page after login
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
         tx.replace(R.id.main, new SearchBusFrag());
         tx.commit();

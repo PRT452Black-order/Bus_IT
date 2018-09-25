@@ -45,7 +45,8 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:hint="Enter destination" />
+            android:hint="Enter destination"
+            android:paddingTop="5dp"/>
     </android.support.design.widget.TextInputLayout>
 
     <ImageView
