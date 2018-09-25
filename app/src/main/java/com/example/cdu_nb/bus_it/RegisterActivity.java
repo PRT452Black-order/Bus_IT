@@ -35,7 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
         btnSignUp = (Button) findViewById(R.id.btnRegister);
         inputEmail = (EditText) findViewById(R.id.etUsername);
         inputPassword = (EditText) findViewById(R.id.etPassword);
-
         confirmPassword = (EditText) findViewById(R.id.etConfirmPassword);
 //        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 //        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
@@ -62,19 +61,25 @@ public class RegisterActivity extends AppCompatActivity {
 
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
+                String matchPassword = confirmPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Enter email address", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!password.equals(matchPassword)) {
+                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
