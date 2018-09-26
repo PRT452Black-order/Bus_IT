@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class SearchBusFrag extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class SearchBusFrag extends Fragment {
         OnClickListener listnr=new OnClickListener() {
             @Override
             public void onClick(View myview) {
+//
                 Intent intent = new Intent(getActivity(), MapActivity.class);
                 startActivity(intent);
             }
