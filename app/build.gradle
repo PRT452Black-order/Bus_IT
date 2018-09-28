@@ -46,6 +46,9 @@ dependencies {
     //other services
 
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //PayPal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
 }
 
 apply plugin: 'com.google.gms.google-services'

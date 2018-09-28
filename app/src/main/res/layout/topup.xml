@@ -34,13 +34,23 @@
         android:text="Top up your balance"
         android:textSize="30sp" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="296dp"
-        android:layout_height="73dp"
+    <Button
+        android:id="@+id/payButton"
+        android:layout_width="234dp"
+        android:layout_height="72dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="182dp"
-        app:srcCompat="@drawable/paypal_icon" />
+        android:layout_marginTop="183dp"
+        android:text="Single Trip - $3"
+        android:onClick="pay"/>
+
+    <TextView
+        android:id="@+id/response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="228dp"
+        android:text=" "/>
 
 </RelativeLayout>

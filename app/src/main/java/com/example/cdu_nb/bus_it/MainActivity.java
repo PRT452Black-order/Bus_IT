@@ -1,7 +1,10 @@
 package com.example.cdu_nb.bus_it;
 
+import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
@@ -14,9 +17,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.paypal.android.sdk.payments.PayPalConfiguration;
+import com.paypal.android.sdk.payments.PayPalPayment;
+import com.paypal.android.sdk.payments.PayPalService;
+import com.paypal.android.sdk.payments.PaymentActivity;
+import com.paypal.android.sdk.payments.PaymentConfirmation;
+
+import java.math.BigDecimal;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    //PayPal setup
+    TextView m_response;
+    PayPalConfiguration m_configuration;
+    String m_paypalClientId = "ATcecTRpX3n35-ldymh8EW1-Q8jO1OpgVc6VMImnXl_tTFzs88LB0R3Wi9eB7ioKXVIu3kBewxODx6GG";
+    Intent m_service;
+    int m_paypalRequestCode = 999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +56,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        m_response = (TextView) findViewById(R.id.response);
+        m_configuration = new PayPalConfiguration().environment(PayPalConfiguration.ENVIRONMENT_SANDBOX).clientId(m_paypalClientId);
+        m_service = new Intent(this, PayPalService.class);
+        m_service.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, m_configuration);
+        startService(m_service);
     }
 
     @Override
@@ -121,5 +145,35 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    void pay(View view) {
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(3), "AUD", "Test paypal", PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent = new Intent(this, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, m_configuration);
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment);
+        startActivityForResult(intent, m_paypalRequestCode);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == m_paypalRequestCode) {
+            if(resultCode == Activity.RESULT_OK) {
+                PaymentConfirmation confirmation = data.getParcelableExtra(PaymentActivity.EXTRA_RESULT_CONFIRMATION);
+
+                if(confirmation != null) {
+                    String state = confirmation.getProofOfPayment().getState();
+
+                    if(state.equals("approved")) {
+                        m_response.setText("payment approved");
+                    } else {
+                        m_response.setText("error in the payment");
+                    }
+                } else {
+                    m_response.setText("confirmation is null");
+                }
+            }
+        }
     }
 }
