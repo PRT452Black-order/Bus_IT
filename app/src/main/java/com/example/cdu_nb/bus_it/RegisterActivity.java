@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.etUsername);
         inputPassword = (EditText) findViewById(R.id.etPassword);
         confirmPassword = (EditText) findViewById(R.id.etConfirmPassword);
-//        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 //        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
 
 //        btnResetPassword.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-//                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -111,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        progressBar.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
     }
 }
 
