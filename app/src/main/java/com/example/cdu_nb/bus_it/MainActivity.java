@@ -27,8 +27,20 @@ import com.paypal.android.sdk.payments.PaymentConfirmation;
 
 import java.math.BigDecimal;
 
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.LinearLayoutManager;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    RecyclerView recyclerView;
+    RecyclerAdapter recyclerAdapter;
+    List<Ticket> list;
+
     //PayPal setup
     TextView m_response;
     PayPalConfiguration m_configuration;
@@ -48,8 +60,11 @@ public class MainActivity extends AppCompatActivity
         tx.commit();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        setSupportActionBar(toolbar);  recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        createemplist();
+        recyclerAdapter=new RecyclerAdapter(list,MainActivity.this);
+        recyclerView.setAdapter(recyclerAdapter);
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -85,6 +100,12 @@ public class MainActivity extends AppCompatActivity
         m_service = new Intent(this, PayPalService.class);
         m_service.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, m_configuration);
         startService(m_service);
+    }
+
+    private void createemplist() {
+        list = new ArrayList<>();
+        list.add(new Ticket("Route: 4", "Date: 4/10/2018"));
+        list.add(new Ticket("Route: 9", "Date: 5/10/2018"));
     }
 
     @Override
