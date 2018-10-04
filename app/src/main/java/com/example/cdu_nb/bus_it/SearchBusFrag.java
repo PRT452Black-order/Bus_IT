@@ -26,8 +26,10 @@ public class SearchBusFrag extends Fragment {
             }
         };
 
-        CardView route4 =(CardView) myview.findViewById(R.id.cardview);
+        CardView route4 =(CardView) myview.findViewById(R.id.cardview_route4);
+        CardView route9 =(CardView) myview.findViewById(R.id.cardview_route9);
         route4.setOnClickListener(listnr);
+        route9.setOnClickListener(listnr);
         return myview;
     }
 }
