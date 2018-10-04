@@ -143,8 +143,26 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    void pay(View view) {
-        PayPalPayment payment = new PayPalPayment(new BigDecimal(3), "AUD", "Test paypal", PayPalPayment.PAYMENT_INTENT_SALE);
+    void paySingle(View view) {
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(3), "AUD", "Single Trip", PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent = new Intent(this, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, m_configuration);
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment);
+        startActivityForResult(intent, m_paypalRequestCode);
+    }
+
+    void payDaily(View view) {
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(7), "AUD", "Full Day Trip", PayPalPayment.PAYMENT_INTENT_SALE);
+
+        Intent intent = new Intent(this, PaymentActivity.class);
+        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, m_configuration);
+        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment);
+        startActivityForResult(intent, m_paypalRequestCode);
+    }
+
+    void payWeekly(View view) {
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(20), "AUD", "Full Week Trip", PayPalPayment.PAYMENT_INTENT_SALE);
 
         Intent intent = new Intent(this, PaymentActivity.class);
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, m_configuration);

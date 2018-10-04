@@ -6,6 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/payButton3"
+        android:layout_width="234dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/payButton2"
+        android:layout_centerHorizontal="true"
+        android:onClick="payWeekly"
+        android:text="Full Week Trip - $20" />
+
+    <Button
+        android:id="@+id/payButton2"
+        android:layout_width="234dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/payButton"
+        android:layout_centerHorizontal="true"
+        android:onClick="payDaily"
+        android:text="Full Day Trip - $7" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -42,7 +60,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="183dp"
         android:text="Single Trip - $3"
-        android:onClick="pay"/>
+        android:onClick="paySingle"/>
 
     <TextView
         android:id="@+id/response"
