@@ -166,7 +166,8 @@ public class MainActivity extends AppCompatActivity
                     String state = confirmation.getProofOfPayment().getState();
 
                     if(state.equals("approved")) {
-                        m_response.setText("payment approved");
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main,
+                                new TapGoFrag()).commit();
                     } else {
                         m_response.setText("error in the payment");
                     }
