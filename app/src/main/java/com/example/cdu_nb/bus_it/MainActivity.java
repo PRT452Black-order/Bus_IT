@@ -1,12 +1,9 @@
 package com.example.cdu_nb.bus_it;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -107,7 +104,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.main,
                     new SearchBusFrag()).commit();
 
-        } else if (id == R.id.nav_topup) {
+        } else if (id == R.id.route4) {
             // Handle the topup action
             getSupportFragmentManager().beginTransaction().replace(R.id.main,
                     new TopUpFrag()).commit();
