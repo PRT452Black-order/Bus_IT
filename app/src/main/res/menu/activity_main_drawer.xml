@@ -10,7 +10,7 @@
             android:icon="@drawable/ic_bus"
             android:title="Search Bus" />
         <item
-            android:id="@+id/route4"
+            android:id="@+id/nav_topup"
             android:icon="@drawable/ic_topup"
             android:title="Top Up Balance" />
         <item

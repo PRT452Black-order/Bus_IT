@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.main,
                     new SearchBusFrag()).commit();
 
-        } else if (id == R.id.route4) {
+        } else if (id == R.id.nav_topup) {
             // Handle the topup action
             getSupportFragmentManager().beginTransaction().replace(R.id.main,
                     new TopUpFrag()).commit();
