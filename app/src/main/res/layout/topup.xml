@@ -49,7 +49,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="127dp"
-        android:text="Top up your balance"
+        android:text="Purchase Ticket"
         android:textSize="30sp" />
 
     <Button

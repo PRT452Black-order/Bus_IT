@@ -86,6 +86,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private static final LatLng GilruthAv_Casino = new LatLng(-12.449498,130.8316296);
     private static final LatLng DarwinInterchange = new LatLng(-12.4647792,130.8443376);
 
+    Button purchase;
 
     //     on creating the application
     @Override
@@ -94,6 +95,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_map);
 //        getSupportFragmentManager().beginTransaction().replace(R.id.main,
 //                new TopUpFrag()).commit();
+
+        purchase = (Button) findViewById(R.id.payTk);
+
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
