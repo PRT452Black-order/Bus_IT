@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.example.cdu_nb.bus_it.MapActivity;
 
 public class SearchBusFrag extends Fragment {
 
@@ -23,8 +24,10 @@ public class SearchBusFrag extends Fragment {
 //
                 Intent intent = new Intent(getActivity(), MapActivity.class);
                 startActivity(intent);
+
             }
         };
+
 
         CardView route4 =(CardView) myview.findViewById(R.id.cardview_route4);
         CardView route9 =(CardView) myview.findViewById(R.id.cardview_route9);
