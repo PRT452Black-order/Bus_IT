@@ -98,6 +98,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         purchase = (Button) findViewById(R.id.payTk);
 
+
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
