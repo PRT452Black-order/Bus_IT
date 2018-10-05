@@ -43,7 +43,6 @@ public class HistoryFrag extends Fragment {
         list = new ArrayList<>();
         list.add(new Ticket("Route: 4", "Date: 4/10/2018"));
         list.add(new Ticket("Route: 9", "Date: 5/10/2018"));
-
-
+        list.add(new Ticket("Route: 9", "Date: 5/10/2018"));
     }
 }
