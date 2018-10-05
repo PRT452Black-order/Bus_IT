@@ -26,6 +26,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
     @Override
     public void onBindViewHolder(RecyclerAdapter.VH holder, int position) {
         holder.name.setText(list.get(position).route);
+        holder.fare.setText(list.get(position).fare);
         holder.loc.setText(list.get(position).date);
 
     }
@@ -37,12 +38,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VH> {
 
     public class VH extends RecyclerView.ViewHolder {
         TextView name;
+        TextView fare;
         TextView loc;
 
         public VH(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.list_title);
-            loc = (TextView) itemView.findViewById(R.id.list_desc);
+            name = (TextView) itemView.findViewById(R.id.route);
+            fare = (TextView) itemView.findViewById(R.id.fare);
+            loc = (TextView) itemView.findViewById(R.id.date);
         }
 
     }
