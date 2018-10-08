@@ -86,8 +86,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private static final LatLng GilruthAv_Casino = new LatLng(-12.449498,130.8316296);
     private static final LatLng DarwinInterchange = new LatLng(-12.4647792,130.8443376);
 
-    Button purchase;
-
     //     on creating the application
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -96,7 +94,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 //        getSupportFragmentManager().beginTransaction().replace(R.id.main,
 //                new TopUpFrag()).commit();
 
-        purchase = (Button) findViewById(R.id.payTk);
+        /*Button purchase = (Button) findViewById(R.id.payTk);
+        purchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });*/
 
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
