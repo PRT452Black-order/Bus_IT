@@ -9,9 +9,12 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import android.support.v4.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -126,13 +129,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             GetBusnumber4();
 
             Button btnMap = (Button) findViewById(R.id.payTk);
-        btnMap.setOnClickListener(new View.OnClickListener() {
+            btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-//                Intent i = new Intent(this,TopUpFrag.class());
-//                startActivity(i);
+                startActivity(new Intent(MapActivity.this, TopUpFrag.class));
+//                getSupportFragmentManager().beginTransaction().replace(R.id.main,
+//                        new TopUpFrag()).commit();
             }
         });
 

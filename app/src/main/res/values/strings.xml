@@ -48,6 +48,7 @@
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
     <string name="error_password_match">The passwords do not match</string>
     <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="max_login_attempt">You had too many login attempt.</string>
 
     <!-- string related to tapandgo page-->
     <string name="thanks">Thank you for riding our bus</string>
