@@ -19,6 +19,15 @@ android {
 }
 
 dependencies {
+    // Unit testing dependencies
+    // Set this dependency if you want to use the Hamcrest matcher library
+
+    // more stuff, e.g., Mockito
+
+
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
     implementation 'com.android.support:support-v4:28.0.0-rc02'
