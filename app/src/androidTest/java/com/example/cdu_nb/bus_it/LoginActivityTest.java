@@ -1,4 +1,4 @@
-package com.example.cdu_nb.bus_it;
+/*package com.example.cdu_nb.bus_it;
 
 <<<<<<< HEAD
 import android.support.test.rule.ActivityTestRule;
@@ -183,3 +183,4 @@ public class LoginActivityTest {
     }
 }
 >>>>>>> 293cc360b31d169f418b95b7c73499e9c28ca4d3
+*/
