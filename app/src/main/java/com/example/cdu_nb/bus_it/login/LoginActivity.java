@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         inputEmail = (EditText) findViewById(R.id.etLoginUsername);
         inputPassword = (EditText) findViewById(R.id.etLoginPassword);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-//        btnSignup = (Button) findViewById(R.id.btnLoginRegister);
+        btnSignup = (Button) findViewById(R.id.btnLoginRegister);
         btnLogin = (Button) findViewById(R.id.btnLogin);
 //        return false;
 
@@ -139,6 +139,14 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
                                 }
                             }
                         });
+            }
+        });
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
