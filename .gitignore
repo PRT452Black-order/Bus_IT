@@ -8,3 +8,5 @@
 /build
 /captures
 .externalNativeBuild
+app/src/androidTest/java/com/example/cdu_nb/bus_it/LoginActivityTest.java
+app/src/androidTest/java/com/example/cdu_nb/bus_it/LoginActivityTest.java

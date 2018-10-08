@@ -9,9 +9,12 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import android.support.v4.app.Fragment;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -86,8 +89,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private static final LatLng GilruthAv_Casino = new LatLng(-12.449498,130.8316296);
     private static final LatLng DarwinInterchange = new LatLng(-12.4647792,130.8443376);
 
-    Button purchase;
-
     //     on creating the application
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -96,7 +97,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 //        getSupportFragmentManager().beginTransaction().replace(R.id.main,
 //                new TopUpFrag()).commit();
 
-        purchase = (Button) findViewById(R.id.payTk);
+        /*Button purchase = (Button) findViewById(R.id.payTk);
+        purchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });*/
 
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -126,13 +135,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             GetBusnumber4();
 
             Button btnMap = (Button) findViewById(R.id.payTk);
-        btnMap.setOnClickListener(new View.OnClickListener() {
+            btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-//                Intent i = new Intent(this,TopUpFrag.class());
-//                startActivity(i);
+                startActivity(new Intent(MapActivity.this, TopUpFrag.class));
+//                getSupportFragmentManager().beginTransaction().replace(R.id.main,
+//                        new TopUpFrag()).commit();
             }
         });
 
