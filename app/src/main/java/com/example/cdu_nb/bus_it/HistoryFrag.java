@@ -41,8 +41,7 @@ public class HistoryFrag extends Fragment {
         super.onCreate(savedInstanceState);
 
         list = new ArrayList<>();
-        list.add(new Ticket("Route: 4", "Date: 4/10/2018"));
-        list.add(new Ticket("Route: 9", "Date: 5/10/2018"));
-        list.add(new Ticket("Route: 9", "Date: 5/10/2018"));
+        list.add(new Ticket("Route: 4",  "Fare: $3", "Date: 04/10/2018"));
+        list.add(new Ticket("Route: 9", "Fare: $3","Date: 05/10/2018"));
     }
 }
